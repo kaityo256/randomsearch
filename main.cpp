@@ -3,8 +3,16 @@
 #include <algorithm>
 #include <iostream>
 #include <random>
+#include <chrono>
 
 std::mt19937 mt;
+
+auto myclock(){
+  static const auto s = std::chrono::system_clock::now();
+  const auto e = std::chrono::system_clock::now();
+  const auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(e - s).count();
+  return elapsed;
+}
 
 mbit random_remove(const mbit &s, std::mt19937 &mt) {
   mbit t = s;
@@ -22,10 +30,11 @@ void dig(const std::string &answer) {
   for (int i = 0; i < 1000; i++) {
     mbit m2 = random_remove(m, mt);
     std::string s = mbit2str(m2, answer);
+    if(!Grid::is_unique(s))return;
     hints--;
     m = m2;
     if (hints == 30) {
-      std::cout << m << std::endl;
+      std::cout << s << std::endl;
       return;
     }
   }
@@ -35,5 +44,8 @@ int main() {
   const int seed = 0;
   AnsMaker am(seed);
   mt.seed(seed);
-  dig(am.make());
+  auto ans = am.make();
+  while(true){
+    dig(ans);
+  }
 }
