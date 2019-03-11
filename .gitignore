@@ -1,6 +1,7 @@
 a.out
 .clang-format
 makefile.depend
+makefile.opt
 q2*.dat
 sc*.dat
 *.o

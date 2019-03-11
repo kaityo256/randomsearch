@@ -5,8 +5,10 @@ SRC+=smr/rater.cpp
 SRC+=smr/gridbase.cpp
 OBJ=$(SRC:.cpp=.o)
 
-CC=g++
-CPPFLAGS=-O3 -mavx2
+CC=mpic++
+CPPFLAGS=-O3 -mavx2 -std=c++11
+
+-include makefile.opt
 
 a.out: $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $@

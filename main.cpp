@@ -6,6 +6,7 @@
 #include <chrono>
 #include <fstream>
 #include <iostream>
+#include <mpi.h>
 #include <random>
 
 Rater rater(100000);
@@ -17,7 +18,7 @@ std::ofstream ofs_sc;
 //#define FULLSEARCH
 
 // プログラム開始時からの経過時間(ms)
-auto myclock() {
+const long long myclock() {
   static const auto s = std::chrono::system_clock::now();
   const auto e = std::chrono::system_clock::now();
   const auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(e - s).count();
@@ -90,9 +91,7 @@ void dig(const std::string &answer, std::mt19937 &mt) {
     m = m2;
 #ifdef FULLSEARCH
     if (hints == 30) {
-      //std::cout << s << std::endl;
       search(m, m, answer);
-      exit(1);
       return;
     }
 #endif
@@ -114,6 +113,10 @@ void test(const int seed = 0) {
   }
 }
 
-int main() {
-  test();
+int main(int argc, char **argv) {
+  MPI_Init(&argc, &argv);
+  int rank;
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  test(rank);
+  MPI_Finalize();
 }
