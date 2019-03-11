@@ -19,7 +19,7 @@ a.out: $(OBJ)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 dep:
-	g++  -std=gnu++11 -MM -MG $(INCLUDE) $(SRC) >makefile.depend
+	g++  -std=gnu++11 -MM -MG $(SRC) >makefile.depend
 
 clean:
 	rm -f a.out $(OBJ)
