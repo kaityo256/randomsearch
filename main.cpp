@@ -1,12 +1,17 @@
+#include "sc125f/sc125fa.hpp"
 #include "smr/rater.hpp"
 #include "sudoku_lib/ansmaker.hpp"
 #include "sudoku_lib/grid.hpp"
 #include <algorithm>
 #include <chrono>
+#include <fstream>
 #include <iostream>
 #include <random>
 
 Rater rater(100000);
+
+std::ofstream ofs_q2;
+std::ofstream ofs_sc;
 
 // このマクロが有効な場合、途中から全探索に切り替える
 //#define FULLSEARCH
@@ -22,14 +27,21 @@ auto myclock() {
 // 得られた数独の問題の難易度と取得時刻を返す
 void show(std::string &str) {
   static long long q2max = 0;
+  static int scmax = 0;
   auto r = rater.rate(str.c_str());
-  if(q2max >= r){
-    return;
+  if (q2max < r) {
+    q2max = r;
+    ofs_q2 << str << " ";
+    ofs_q2 << r << " ";
+    ofs_q2 << myclock() << std::endl;
   }
-  q2max = r;
-  std::cout << str << " ";
-  std::cout << r << " ";
-  std::cout << myclock() << std::endl;
+  int sc = sc125f::calc(str.c_str());
+  if (scmax < sc) {
+    scmax = sc;
+    ofs_sc << str << " ";
+    ofs_sc << sc << " ";
+    ofs_sc << myclock() << std::endl;
+  }
 }
 
 // 途中までランダムに掘った数独から、掘れるだけ掘って探す
@@ -91,6 +103,11 @@ void test(const int seed = 0) {
   std::mt19937 mt;
   AnsMaker am(seed);
   mt.seed(seed);
+  char filename[256];
+  sprintf(filename, "sc_%04d.dat", seed);
+  ofs_sc.open(filename);
+  sprintf(filename, "q2_%04d.dat", seed);
+  ofs_q2.open(filename);
   auto ans = am.make();
   while (true) {
     dig(ans, mt);
@@ -98,7 +115,5 @@ void test(const int seed = 0) {
 }
 
 int main() {
-  //mbit m = mbit(243);
-  //search(m, m);
   test();
 }

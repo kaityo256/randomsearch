@@ -4,3 +4,6 @@
 [submodule "smr"]
 	path = smr
 	url = git@github.com:kaityo256/smr.git
+[submodule "sc125f"]
+	path = sc125f
+	url = git@github.com:kaityo256/sc125f.git
