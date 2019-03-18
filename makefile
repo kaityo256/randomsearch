@@ -1,8 +1,13 @@
 all: a.out
 SRC=main.cpp
 SRC+=sudoku_lib/grid.cpp
-SRC+=smr/rater.cpp
+SRC+=smr/fastgrid.cpp
+SRC+=smr/solvergrid.cpp
 SRC+=smr/gridbase.cpp
+SRC+=smr/rater.cpp
+SRC+=smr/uafinder.cpp
+SRC+=smr/mask81.cpp
+SRC+=smr/uniquenesschecker.cpp
 OBJ=$(SRC:.cpp=.o)
 
 CC=mpic++

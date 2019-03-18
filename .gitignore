@@ -5,3 +5,5 @@ makefile.opt
 q2*.dat
 sc*.dat
 *.o
+.DS_Store
+.vscode
