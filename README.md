@@ -23,8 +23,6 @@
 * simpledig (掘れるだけ掘るモード)
 * fullsearch (全探索モード)
 
-gsf's q2だとはっきり全探索モードの方が早い。scだと違いが分かりづらい。
-
 ## ライセンス
 
 * [cmpdline](https://github.com/tanakh/cmdline) (C) 2009, Hideyuki Tanaka 修正BSDライセンス
