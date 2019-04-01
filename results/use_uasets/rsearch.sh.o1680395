@@ -1,0 +1,96 @@
+mpijob CMD    : mpirun -f /tmp/mpiexec.params.i000800.31725
+mpijob PARAMS : -d /home/i0008/i000800/github/randomsearch/use_uasets r7i2n0 24,
+        r7i2n1 24, r7i2n2 24, r7i2n3 24, r7i2n4 24, r7i2n5 24, r7i2n6 24,
+        r7i2n7 24, r7i2n8 24, r7i2n9 24, r7i2n10 24, r7i2n11 24, r7i2n12 24,
+        r7i2n13 24, r7i2n14 24, r7i2n15 24, r7i2n16 24, r7i2n17 24, r7i2n18
+        24, r7i2n19 24, r7i2n20 24, r7i2n21 24, r7i2n22 24, r7i2n23 24,
+        r7i2n24 24, r7i2n25 24, r7i2n26 24, r7i2n27 24, r7i2n28 24, r7i2n29
+        24, r7i2n30 24, r7i2n31 24, r7i2n32 24, r7i2n33 24, r7i2n34 24,
+        r7i2n35 24, r7i3n0 24, r7i3n1 24, r7i3n2 24, r7i3n3 24, r7i3n4 24,
+        r7i3n5 24, r7i3n6 24, r7i3n7 24, r7i3n8 24, r7i3n9 24, r7i3n10 24,
+        r7i3n11 24, r7i3n12 24, r7i3n13 24, r7i3n14 24, r7i3n15 24, r7i3n16
+        24, r7i3n17 24, r7i3n18 24, r7i3n19 24, r7i3n20 24, r7i3n21 24,
+        r7i3n22 24, r7i3n23 24, r7i3n24 24, r7i3n25 24, r7i3n26 24, r7i3n27
+        24, r7i3n28 24, r7i3n29 24, r7i3n30 24, r7i3n31 24, r7i3n32 24,
+        r7i3n33 24, r7i3n34 24, r7i3n35 24 omplace -nt 1 "./a.out"
+
+SGI MPT Placement option
+--------------------------
+omplace -nt 1
+
+Node   MPI
+------------
+r7i2n0 24
+r7i2n1 24
+r7i2n2 24
+r7i2n3 24
+r7i2n4 24
+r7i2n5 24
+r7i2n6 24
+r7i2n7 24
+r7i2n8 24
+r7i2n9 24
+r7i2n10 24
+r7i2n11 24
+r7i2n12 24
+r7i2n13 24
+r7i2n14 24
+r7i2n15 24
+r7i2n16 24
+r7i2n17 24
+r7i2n18 24
+r7i2n19 24
+r7i2n20 24
+r7i2n21 24
+r7i2n22 24
+r7i2n23 24
+r7i2n24 24
+r7i2n25 24
+r7i2n26 24
+r7i2n27 24
+r7i2n28 24
+r7i2n29 24
+r7i2n30 24
+r7i2n31 24
+r7i2n32 24
+r7i2n33 24
+r7i2n34 24
+r7i2n35 24
+r7i3n0 24
+r7i3n1 24
+r7i3n2 24
+r7i3n3 24
+r7i3n4 24
+r7i3n5 24
+r7i3n6 24
+r7i3n7 24
+r7i3n8 24
+r7i3n9 24
+r7i3n10 24
+r7i3n11 24
+r7i3n12 24
+r7i3n13 24
+r7i3n14 24
+r7i3n15 24
+r7i3n16 24
+r7i3n17 24
+r7i3n18 24
+r7i3n19 24
+r7i3n20 24
+r7i3n21 24
+r7i3n22 24
+r7i3n23 24
+r7i3n24 24
+r7i3n25 24
+r7i3n26 24
+r7i3n27 24
+r7i3n28 24
+r7i3n29 24
+r7i3n30 24
+r7i3n31 24
+r7i3n32 24
+r7i3n33 24
+r7i3n34 24
+r7i3n35 24
+
+Use UA sets
