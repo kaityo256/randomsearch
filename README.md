@@ -24,3 +24,10 @@
 * fullsearch (全探索モード)
 
 gsf's q2だとはっきり全探索モードの方が早い。scだと違いが分かりづらい。
+
+## ライセンス
+
+* [cmpdline](https://github.com/tanakh/cmdline) (C) 2009, Hideyuki Tanaka 修正BSDライセンス
+* [smr](https://github.com/kaityo256/smr) (C) anta GPLv3
+* [sc125f](https://github.com/kaityo256/sc125f) (C) 川合秀実 川合堂ライセンス-01 ver.1.0
+* 上記以外 (C) H. Watanabe MITライセンス
